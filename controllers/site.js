@@ -10,3 +10,9 @@ exports.index=function(req,res){
     );
 };
 
+exports.boot=function(req,res){
+    res.render('bootstrap',
+        {   siteInfo:config.siteInfo    }
+    );
+};
+

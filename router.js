@@ -10,5 +10,6 @@ var auth = function (req, res, next) {
 
 module.exports=function(app){
     app.get('/', site.index);
+    app.get('/boot', site.boot);
 
 }

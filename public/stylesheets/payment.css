@@ -1,0 +1,131 @@
+body{
+
+}
+#uiList{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#uiList li{
+    margin-top: 20px;
+}
+.pay-item{
+    position: relative;
+    border-radius: 3px;
+    background: #fff;
+    width:100%;
+    border: 1px solid #EAEAEA;
+    height: 55px;
+}
+.pay-item-namebox{
+    position: absolute;
+    top:0;
+    left:0;
+    width:150px;
+    height:100%;
+    border-right: 1px solid #EAEAEA;
+}
+.pay-item-namelabel{
+    position: relative;
+    width:100%;
+    height:100%;
+    line-height: 55px;
+    font-size: 30px;
+    text-align: center;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+.pay-item-table{
+    width:100%;
+    height:100%;
+    padding-left:150px;
+    padding-right:150px;
+}
+.pay-item-table table{
+    width:100%;
+}
+.pay-item-table table .tr1{
+    height:20px;
+    border-bottom:1px solid #EAEAEA;
+}
+.pay-item-table table .tr2{
+    height:33px;
+}
+.pay-item-table table td{
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    min-width: 70px;
+    font-size: 12px;
+    width:14%;
+    text-align: center;
+    border-right: 1px solid #EAEAEA;
+}
+.pay-item-results{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 150px;
+    height:100%;
+}
+.week-ave{
+    background: #AAAAAA;
+}
+.pay-item-input-box{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.pay-item-input-box .inputbox{
+    float: left;
+    width: 80%;
+    height:100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.pay-item-input-box  .input-box-btns{
+    width:19%;
+    height:100%;
+    float:right;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #ddd;
+}
+.input-btn{
+    position: relative;
+    width:22px;
+    height:22px;
+    border-radius:3px;
+    background: #5bc0de;
+}
+.input-btn:hover{
+    background: #2b81af;
+}
+.input-btn:before{
+    font-family: 'Glyphicons Halflings';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width:100%;
+    height:100%;
+    line-height: 22px;
+    position: absolute;
+    left: 0px;
+    top:0px;
+    font-size: 12px;
+    color: #000;
+}
+.ok-btn:before{
+    content: "\e013";
+}
+.cancel-btn:before{
+    content: "\e014";
+}
