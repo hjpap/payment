@@ -102,13 +102,14 @@ body{
 }
 .input-btn{
     position: relative;
-    width:22px;
-    height:22px;
+    width:18px;
+    height:18px;
     border-radius:3px;
-    background: #5bc0de;
+    background: #fff;
+    border:1px solid #adadad;
 }
 .input-btn:hover{
-    background: #2b81af;
+    background: #EBEBEB;
 }
 .input-btn:before{
     font-family: 'Glyphicons Halflings';
@@ -116,16 +117,21 @@ body{
     -moz-osx-font-smoothing: grayscale;
     width:100%;
     height:100%;
-    line-height: 22px;
+    line-height: 18px;
     position: absolute;
     left: 0px;
-    top:0px;
+    top:-1px;
     font-size: 12px;
-    color: #000;
+    color: #666;
 }
 .ok-btn:before{
     content: "\e013";
 }
 .cancel-btn:before{
     content: "\e014";
+}
+.btn-group{
+    position:absolute;
+    right:2px;
+    bottom:2px;
 }
