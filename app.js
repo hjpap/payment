@@ -57,6 +57,28 @@ process.on('uncaughtException',function(err){
 //    res.send(500,'something broke');
 //});
 
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
+});
+
+var io=require('socket.io').listen(server);
+var users={};
+io.sockets.on('connection',function(socket){
+    console.log("Connection :"+socket.id);
+    socket.emit('news', { hello: 'welcome!' });
+    users[socket.id]=socket;
+    socket.on('message',function(message){
+        console.log("Received message from"+socket.id+"- message"+" :"+message.userName+"="+message.message);
+        for(var sid in users){
+            var nowSoc=users[sid];
+            if(sid!=socket.id){
+                console.log('------------------------------');
+                nowSoc.emit("message",message);
+            }
+        }
+    });
+
+    socket.on('disconnect',function(){
+        console.log("Connection "+socket.id+" terminated");
+    });
 });

@@ -16,3 +16,9 @@ exports.boot=function(req,res){
     );
 };
 
+exports.mes=function(req,res){
+    res.render('socket',
+        {   siteInfo:config.siteInfo    }
+    );
+};
+

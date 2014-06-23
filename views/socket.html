@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title><%=siteInfo ? siteInfo.title : "PayMent."%></title>
+        <meta name="description" content='<%=siteInfo ? siteInfo.description : "PayMent."%>'>
+        <meta name="keywords" content='<%=siteInfo ? siteInfo.keywords : "PayMent."%>' />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="shortcut icon" href="<%=siteInfo.siteStaticURL%>/images/favicon.ico" type="image/x-icon" />
+        <script type="text/javascript" src="<%=siteInfo.siteStaticURL%>/javascripts/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="<%=siteInfo.siteStaticURL%>/javascripts/jquery-ui-min.js"></script>
+        <script src="<%=siteInfo.siteStaticURL%>/javascripts/jquery.ui.core.min.js"></script>
+        <script src="<%=siteInfo.siteStaticURL%>/javascripts/jquery.ui.widget.min.js"></script>
+        <script src="<%=siteInfo.siteStaticURL%>/javascripts/jquery.ui.mouse.min.js"></script>
+        <script src="<%=siteInfo.siteStaticURL%>/javascripts/jquery.ui.sortable.min.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.0.4.js"></script>
+        <style>
+            html,body{
+                height:99%;
+                width:99%;
+            }
+            .container{
+                height:90%;
+                width:70%;
+            }
+            .chartBoard{
+                overflow-y: scroll;
+                height:60%;
+                border:1px solid #fff;
+            }
+            .list{
+
+            }
+            .item{
+                margin-top:5px;
+            }
+            .me{
+                text-align: right;
+            }
+            .sendBoard{
+                margin-top:20px;
+                height:30%;
+            }
+            #messageContent{
+                width:70%;
+                height:100px;
+            }
+            #send{
+                margin-left: 20px;
+                height:30px;
+                position: relative;
+                bottom: 10px;
+            }
+        </style>
+
+	</head>
+
+    <body>
+    <div class="container">
+        <div class="chartBoard">
+            <div class="list" id="chartList">
+
+            </div>
+        </div>
+
+        <div class="sendBoard">
+            <textarea id="messageContent"></textarea>
+            <button id="send">send</button>
+        </div>
+    </div>
+    </body>
+
+    <script>
+
+        var myName="user"+Math.floor(Math.random()*10+1);
+
+        var socket = io.connect('http://10.20.3.51:3002');
+        socket.on('news', function (data) {
+            console.log(JSON.stringify(data));
+            socket.emit('my other event', { my: 'data' });
+        });
+        socket.on('message',function(data){
+            receiveData(data);
+        });
+
+        var sendButton=document.getElementById("send");
+        sendButton.addEventListener("click",function(e){
+            sendData();
+        },true);
+
+        function sendData(){
+            var sendDom=document.getElementById("messageContent");
+            var message=sendDom.value;
+            sendDom.value="";
+
+            socket.emit('message',{userName:myName,message:message});
+
+            var htmlStr='<div class="item me">'+message+'</div>';
+            var listDom=document.getElementById("chartList");
+            listDom.innerHTML+=htmlStr;
+        }
+
+        function receiveData(data){
+            var userName=data.userName;
+            var message=data.message;
+            var htmlStr='<div class="item other"><span>'+userName+':</span><span class="message">'+message+'</span></div>';
+            var listDom=document.getElementById("chartList");
+            listDom.innerHTML+=htmlStr;
+        }
+    </script>
+</html>

@@ -57,7 +57,67 @@
 </div>
 
 <div class="container">
+<script>
+    (function(){
+        var PayItem = function(){
+            var self = this;
+            var _v = {
+                doms:{
+                    nameLabel:null,
+                    nameInput:null,
+                    nameOkBtn:null,
+                    nameCancelBtn:null,
 
+                }
+            }
+            var _e = {
+
+            }
+            var _f = {
+                createDom : function(){
+                    var str = '<div class="pay-item">\
+                                    <div class="pay-item-namebox">\
+                                        <div class="pay-item-namelabel">\
+                                            <span id="nameLabel">Element</span>\
+                                            <div style="display: none" class="pay-item-input-box">\
+                                                <input id="nameInput" class="inputbox" type="text"/>\
+                                                <div class="btn-group-vertical btn-group-xs input-box-btns">\
+                                                    <button id="nameOkBtn" type="button" class="btn input-btn ok-btn"></button>\
+                                                    <button id="nameCancelBtn" type="button" class="btn input-btn cancel-btn"></button>\
+                                                </div>\
+                                            </div>\
+                                        </div>\
+                                    </div>\
+                                    <div class="pay-item-table">\
+                                        <table>\
+                                            <tr class="tr1"><td>sateday(12.25)</td><td>周二</td><td></td><td></td><td></td><td></td><td></td><td class="week-ave">本周 v</td></tr>\
+                                            <tr class="tr2"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="week-ave"></td></tr>\
+                                        </table>\
+                                    </div>\
+                                    <div class="pay-item-results">\
+                                    </div>\
+                                    <div class="btn-group btn-group-xs">\
+                                        <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#editTotalModal">+</button>\
+                                        <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#editTotalModal"> - </button>\
+                                    </div>\
+                                </div>';
+                    var dom = $(str);
+                    _v.doms.nameLabel = dom.find("#nameLabel");
+                    _v.doms.nameInput = dom.find("#nameInput");
+                    _v.doms.nameOkBtn = dom.find("#nameOkBtn");
+                    _v.doms.nameCancelBtn = dom.find("nameCancelBtn");
+
+                }
+            }
+
+            self.init = function(){
+
+            }
+        }
+
+    })();
+
+</script>
     <ul id="uiList">
         <li class="ui-list-item">
             <div class="pay-item">
