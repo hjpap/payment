@@ -63,11 +63,13 @@
             var self = this;
             var _v = {
                 doms:{
+                    rootDom:null,
                     nameLabel:null,
                     nameInput:null,
                     nameOkBtn:null,
                     nameCancelBtn:null,
-
+                    payTable:null,
+                    payResults:null
                 }
             }
             var _e = {
@@ -89,25 +91,32 @@
                                         </div>\
                                     </div>\
                                     <div class="pay-item-table">\
-                                        <table>\
-                                            <tr class="tr1"><td>sateday(12.25)</td><td>周二</td><td></td><td></td><td></td><td></td><td></td><td class="week-ave">本周 v</td></tr>\
-                                            <tr class="tr2"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="week-ave"></td></tr>\
+                                        <table id="payTable">\
+                                            <tr class="tr1"><td id="td1"></td><td id="td2"></td><td id="td3"></td><td id="td4"></td><td id="td5"></td><td id="td6"></td><td id="td7"></td><td id="td8" class="week-ave">本周 v</td></tr>\
+                                            <tr class="tr2"><td id="td11"></td><td id="td22"></td><td id="td33"></td><td id="td44"></td><td id="td55"></td><td id="td66"></td><td id="td77"></td><td id="td88" class="week-ave"></td></tr>\
                                         </table>\
                                     </div>\
-                                    <div class="pay-item-results">\
+                                    <div id="payResults" class="pay-item-results">\
                                     </div>\
                                     <div class="btn-group btn-group-xs">\
-                                        <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#editTotalModal">+</button>\
-                                        <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#editTotalModal"> - </button>\
+                                        <button id="addBtn" type="button" class="btn btn-default"  data-toggle="modal" data-target="#editTotalModal">+</button>\
+                                        <button id="subBtn" type="button" class="btn btn-default"  data-toggle="modal" data-target="#editTotalModal"> - </button>\
                                     </div>\
                                 </div>';
-                    var dom = $(str);
-                    _v.doms.nameLabel = dom.find("#nameLabel");
-                    _v.doms.nameInput = dom.find("#nameInput");
-                    _v.doms.nameOkBtn = dom.find("#nameOkBtn");
-                    _v.doms.nameCancelBtn = dom.find("nameCancelBtn");
-
+                    _v.doms.rootDom = $(str);
+                    _v.doms.nameLabel = _v.doms.rootDom.find("#nameLabel");
+                    _v.doms.nameInput = _v.doms.rootDom.find("#nameInput");
+                    _v.doms.nameOkBtn = _v.doms.rootDom.find("#nameOkBtn");
+                    _v.doms.nameCancelBtn = _v.doms.rootDom.find("nameCancelBtn");
+                    _v.doms.payTable = _v.doms.rootDom.find("#payTable");
+                    _v.doms.payResults = _v.doms.rootDom.find("#payResults");
+                    _v.doms.addBtn = _v.doms.rootDom.find("#addBtn");
+                    _v.doms.subBtn = _v.doms.rootDom.find("#subBtn");
+                },
+                createTag:function(){
+                    var str = '<span class="badge pull-left">+ 42</span>';
                 }
+
             }
 
             self.init = function(){
@@ -165,7 +174,7 @@
                 <div class="pay-item-table">
                     <table>
                         <tr class="tr1"><td>sateday(12.25)</td><td>周二</td><td></td><td></td><td></td><td></td><td></td><td class="week-ave">本周 v</td></tr>
-                        <tr class="tr2"><td><span class="badge pull-left">+ 42</span><span class="badge pull-left">- 42</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="week-ave"></td></tr>
+                        <tr class="tr2"><td><span class="badge pull-left">+ 42</span><span class="badge pull-left">- 42</span><span class="badge pull-left">- 42</span><span class="badge pull-left">- 42</span><span class="badge pull-left">- 42</span><span class="badge pull-left">- 42</span></td><td></td><td></td><td></td><td></td><td></td><td></td><td class="week-ave"></td></tr>
                     </table>
                 </div>
                 <div class="pay-item-results">
