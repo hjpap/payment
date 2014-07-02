@@ -14,7 +14,6 @@ body{
     border-radius: 3px;
     background: #fff;
     width:100%;
-    border: 1px solid #EAEAEA;
     height: 55px;
 }
 .pay-item-namebox{
@@ -35,6 +34,7 @@ body{
     white-space:nowrap;
     text-overflow:ellipsis;
     overflow:hidden;
+    border: 1px solid #EAEAEA;
 }
 .pay-item-table{
     width:100%;
@@ -47,7 +47,6 @@ body{
 }
 .pay-item-table table .tr1{
     height:20px;
-    border-bottom:1px solid #EAEAEA;
 }
 .pay-item-table table .tr2{
     height:33px;
@@ -60,7 +59,8 @@ body{
     font-size: 12px;
     width:14%;
     text-align: center;
-    border-right: 1px solid #EAEAEA;
+    overflow: hidden;
+    border:1px solid #EAEAEA;
 }
 .pay-item-results{
     position: absolute;
@@ -68,6 +68,8 @@ body{
     top:0;
     width: 150px;
     height:100%;
+    border: 1px solid #EAEAEA;
+    background: #fff;
 }
 .week-ave{
     background: #AAAAAA;
@@ -81,7 +83,7 @@ body{
 }
 .pay-item-input-box .inputbox{
     float: left;
-    width: 80%;
+    width: 81%;
     height:100%;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;

@@ -22,3 +22,9 @@ exports.mes=function(req,res){
     );
 };
 
+exports.get=function(req,res){
+    res.render('socket',
+        {   siteInfo:config.siteInfo    }
+    );
+};
+

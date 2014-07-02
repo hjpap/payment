@@ -3,8 +3,8 @@
  */
 exports.config = {
     siteInfo:{
-        siteURL:"http://10.20.3.51:3002",
-        siteStaticURL:"http://10.20.3.51:3002",
+        siteURL:"http://10.20.3.141:3002",
+        siteStaticURL:"http://10.20.3.141:3002",
         title:"PayMent.",
         description:"PayMent",
         keywords:"PayMent"

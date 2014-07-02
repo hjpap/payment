@@ -18,7 +18,7 @@ mongoose.connect(config.db,function(err){
 });
 
 require('./user');
-require('./songs');
+require('./pay');
 
 exports.User = mongoose.model('User');
-exports.Songs = mongoose.model('Songs');
+exports.Songs = mongoose.model('Pay');

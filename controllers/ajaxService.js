@@ -1,7 +1,7 @@
 /**
  * Created by Ric on 13-11-10.
  */
-var SongsDao = require('../dao/songsDao');
+var PayDao = require('../dao/payDao');
 //浮点数加法运算
 function FloatAdd(arg1,arg2){
     var r1,r2,m;
@@ -44,17 +44,6 @@ function FloatDiv(arg1,arg2){
     }
 }
 
-exports.articleForm = function(req, res){
-
-}
-exports.getArticleById = function(req, res, next){
-
-}
-
-exports.add = function(req, res){
-
-}
-
-exports.toModify = function(req, res){
+exports.getAllUserAccount = function(req, res){
 
 }
